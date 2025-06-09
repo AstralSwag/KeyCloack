@@ -11,6 +11,7 @@ services:
     command:
       - start-dev
       - --http-enabled=true
+      - --proxy-headers forwarded
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.keycloak.entrypoints=websecure"
