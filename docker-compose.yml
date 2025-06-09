@@ -1,0 +1,17 @@
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: keycloak
+    environment:
+      - KEYCLOAK_ADMIN=${KEYCLOAK_ADMIN_USER}
+      - KEYCLOAK_ADMIN_PASSWORD=${KEYCLOAK_ADMIN_PASSWORD}
+      - KEYCLOAK_FRONTEND_URL=http://localhost:32549/
+    ports:
+      - "32549:8080"
+    volumes:
+      - keycloak_data:/opt/keycloak/data
+    command:
+      - start-dev
+
+volumes:
+  keycloak_data:
