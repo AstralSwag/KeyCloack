@@ -5,7 +5,7 @@ services:
     environment:
       - KC_BOOTSTRAP_ADMIN_USERNAME=${KEYCLOAK_ADMIN_USER}
       - KC_BOOTSTRAP_ADMIN_PASSWORD=${KEYCLOAK_ADMIN_PASSWORD}
-      - KEYCLOAK_FRONTEND_URL=https://${KEYCLOAK_HOST}
+      - KEYCLOAK_FRONTEND_URL=${KEYCLOAK_HOST}
     volumes:
       - keycloak_data:/opt/keycloak/data
     command:
