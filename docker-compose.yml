@@ -9,7 +9,7 @@ services:
     volumes:
       - keycloak_data:/opt/keycloak/data
     command:
-      - start-dev
+      - start
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.keycloak.entrypoints=websecure"
