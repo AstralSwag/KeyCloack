@@ -19,6 +19,8 @@ services:
       - "traefik.http.routers.keycloak.rule=Host(`${KEYCLOAK_HOST}`)"
       - "traefik.http.routers.keycloak.tls.certresolver=myresolver"
       - "traefik.http.services.keycloak.loadbalancer.server.port=8080"
+      - "traefik.http.middlewares.set-xforwardedproto.headers.customrequestheaders.X-Forwarded-Proto=https"
+      - "traefik.http.routers.keycloak.middlewares=set-xforwardedproto@docker"
     networks:
       - traefik-net
 
