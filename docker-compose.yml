@@ -12,6 +12,7 @@ services:
       - start-dev
       - --http-enabled=true
       - --proxy-headers=forwarded
+      - --hostname=${KEYCLOAK_HOST}
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.keycloak.entrypoints=websecure"
