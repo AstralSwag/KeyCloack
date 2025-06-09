@@ -16,6 +16,12 @@ services:
       - "traefik.http.routers.keycloak.rule=Host(`${KEYCLOAK_HOST}`)"
       - "traefik.http.routers.keycloak.tls.certresolver=myresolver"
       - "traefik.http.services.keycloak.loadbalancer.server.port=8080"
+    networks:
+      - traefik-net
 
 volumes:
   keycloak_data:
+
+networks:
+  traefik-net:
+    external: true
